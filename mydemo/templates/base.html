@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      {% block title %}
+      {% endblock title %}
+    </title>
+    <style>
+      .menu {
+        display: block;
+      }
+      .menu ul {
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+      }
+      .menu li {
+        display: inline;
+        margin: 0 5px;
+      }
+    </style>
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+    <h1>This is demo app</h1>
+    {% block page_name %}
+    {% endblock page_name %}
+    <nav class="menu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/page2">first</a></li>
+        <li><a href="/page3">secobd</a></li>
+      </ul>
+    </nav>
+    <div>
+      {% block contents %}{% endblock contents %}
+    </div>
+    <footer>
+      Footer is here
+    </footer>
+    {% block js %}{% endblock %}
+  </body>
+</html>

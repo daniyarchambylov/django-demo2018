@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Demo page Home - {{ title }}
+{% endblock %}
+  
+{% block page_name %}
+  <h2>Page {{ page_name }}</h2>
+{% endblock page_name %}
+
+{% block contents %}
+  <ul>
+    {% for s in students %}
+      {% if s == 'Esen' %}
+        <li>This is {{ s }}</li>
+      {% elif s == 'Kairat' %}
+        <li>I'm {{ s }}</li>
+      {% else %}
+        <li>This is neither Esen nor Kairat</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endblock contents %}
