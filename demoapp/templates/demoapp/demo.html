@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}
   Demo page Home - {{ title }}
 {% endblock %}
@@ -9,6 +11,7 @@
 {% endblock page_name %}
 
 {% block contents %}
+  <img src="{% static 'demoapp/images/image.jpg' %}" alt="background-image" />
   <ul>
     {% for s in students %}
       {% if s == 'Esen' %}

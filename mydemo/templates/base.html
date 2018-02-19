@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html>
   <head>
@@ -5,20 +7,7 @@
       {% block title %}
       {% endblock title %}
     </title>
-    <style>
-      .menu {
-        display: block;
-      }
-      .menu ul {
-        margin: 0;
-        padding: 10px;
-        list-style: none;
-      }
-      .menu li {
-        display: inline;
-        margin: 0 5px;
-      }
-    </style>
+    <link href="{% static 'demoapp/css/styles.css' %}" rel="stylesheet" type="text/css" />
     {% block css %}{% endblock %}
   </head>
   <body>
@@ -27,9 +16,9 @@
     {% endblock page_name %}
     <nav class="menu">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/page2">first</a></li>
-        <li><a href="/page3">secobd</a></li>
+        <li><a href="{% url 'demo-home' %}">Home</a></li>
+        <li><a href="{% url 'demo-paragraphs' %}">first</a></li>
+        <li><a href="{% url 'demo-form' %}">secobd</a></li>
       </ul>
     </nav>
     <div>

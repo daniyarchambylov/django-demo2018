@@ -1,0 +1,19 @@
+.menu {
+  display: block;
+}
+.menu ul {
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+}
+.menu li {
+  display: inline;
+  margin: 0 5px;
+}
+
+
+footer {
+  display: block;
+  padding: 30px;
+  background-color: #ccc;
+}
