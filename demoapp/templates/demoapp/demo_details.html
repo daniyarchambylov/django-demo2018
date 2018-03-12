@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Demo page Home - {{ car.name }}
+{% endblock %}
+  
+{% block page_name %}
+  <h2>Car details {{ car.name }}</h2>
+{% endblock page_name %}
+
+{% block contents %}
+  <p>{{ car.brand }}</p>
+{% endblock contents %}

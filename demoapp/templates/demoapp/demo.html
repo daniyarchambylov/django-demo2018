@@ -21,6 +21,30 @@
       {% else %}
         <li>This is neither Esen nor Kairat</li>
       {% endif %}
+    {% empty %}
+      <p>No students to list</p>
     {% endfor %}
   </ul>
+  <table border="1">
+    <thead>
+      <th>ID</th>
+      <th>name</th>
+      <th>brand</th>
+      <th>model</th>
+      <th>color</th>
+    </thead>
+    <tbody>
+      {% for car in cars %}
+        <tr>
+          <td><a href="{% url  'car-details' car.id %}">{{ car.id }}</a></td>
+          <td>{{ car.name }}</td>
+          <td>{{ car.brnd.name }}</td>
+          <td>{{ car.model }}</td>
+          <td>{{ car.color }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p>Len: {{ cars_l }}</p>
 {% endblock contents %}

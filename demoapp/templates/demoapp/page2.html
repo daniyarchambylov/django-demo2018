@@ -4,6 +4,26 @@
   <p>Some content</p>
   <p>Some content</p>
   <p>Some content</p>
+  <table border="1">
+    <thead>
+      <th>ID</th>
+      <th>name</th>
+      <th>brand</th>
+      <th>model</th>
+      <th>color</th>
+    </thead>
+    <tbody>
+      {% for car in cars %}
+        <tr>
+          <td>{{ car.id }}</td>
+          <td>{{ car.name }}</td>
+          <td>{{ car.brnd.name }}</td>
+          <td>{{ car.model }}</td>
+          <td>{{ car.color }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock contents %}
 
 
@@ -14,6 +34,7 @@
 {% block page_name %}
   <h2>Example 2</h2>
 {% endblock page_name %}
+
 
 {% block css %}
   <style>

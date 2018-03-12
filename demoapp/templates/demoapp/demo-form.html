@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Form example
+{% endblock %}
+  
+{% block page_name %}
+  <h2>Form Example</h2>
+{% endblock page_name %}
+
+{% block contents %}
+
+  <form method="GET">
+    <input type="text" name="brand" />
+    <input type="submit" value="search" />
+  </form>
+
+  <ul>
+    {% for  car in cars %}
+      <li>{{ car.id }} - {{ car.brand }} - {{ car.color }}</li>
+    {% empty %}
+    <li>Empty result</li>
+    {% endfor %}
+  </ul>
+
+{% endblock contents %}

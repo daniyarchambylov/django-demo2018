@@ -8,10 +8,31 @@
   <h2>Example 3</h2>
 {% endblock page_name %}
 
+
 {% block contents %}
   <form>
     Name: <input type="text" /><br />
     other input<input type="radio" /><br />
     <button>Ok</button>
   </form>
+  <table border="1">
+    <thead>
+      <th>ID</th>
+      <th>name</th>
+      <th>brand</th>
+      <th>model</th>
+      <th>color</th>
+    </thead>
+    <tbody>
+      {% for car in cars %}
+        <tr>
+          <td>{{ car.id }}</td>
+          <td>{{ car.name }}</td>
+          <td>{{ car.brnd.name }}</td>
+          <td>{{ car.model }}</td>
+          <td>{{ car.color }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock contents %}
