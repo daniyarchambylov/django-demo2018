@@ -28,6 +28,7 @@ urlpatterns = [
     path('88/', demoapp_views.demo_page777, name='demo-home7'),
     path('info/', demoapp_views.second_page, name='demo-paragraphs'),
     path('forms/', demoapp_views.form_view, name='demo-form'),
+    path('forms-create/', demoapp_views.form_view, name='demo-form-create'),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

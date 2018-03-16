@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Cars,Brands
+from .forms import CarSearchForm, CarsForm
 
 # Create your views here.
 def demo_page(request):
@@ -79,5 +80,26 @@ def third_page(request):
     return render(request, 'demoapp/page3.html', locals())
 
 def form_view(request):
-    cars = Cars.objects.all().order_by('brand')
+    if request.method == 'GET' and request.GET:
+        cars_form = CarSearchForm(request.GET)
+        if cars_form.is_valid():
+            brand = cars_form.cleaned_data['brand']
+            query = Cars.objects.filter(brand__icontains=brand)
+        else:
+            query = Cars.objects.all()
+    else:
+        cars_form = CarSearchForm()
+        query = Cars.objects.all()
+
+    cars = query.order_by('brand')
     return render(request, 'demoapp/demo-form.html', locals())
+
+
+def create_car_view(request):
+    form = CarsForm()
+
+    return render(
+        request,
+        'demoapp/demo-form-create.html',
+        locals()
+    )

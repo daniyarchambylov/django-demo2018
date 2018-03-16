@@ -10,8 +10,8 @@
 
 {% block contents %}
 
-  <form method="GET">
-    <input type="text" name="brand" />
+  <form method="GET" action="{% url 'demo-form' %}">
+    {{ cars_form.as_ul }}
     <input type="submit" value="search" />
   </form>
 

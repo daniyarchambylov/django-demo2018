@@ -4,6 +4,9 @@ from django.db import models
 class Colors(models.Model):
     name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
+
 class Brands(models.Model):
     name = models.CharField(max_length=100)
 
@@ -12,6 +15,9 @@ class Brands(models.Model):
     
     def count_cars(self):
         return self.cars.all().count()
+
+    def __str__(self):
+        return self.name
 
     # def get_brands(self):
     #     return self.brands.all()
